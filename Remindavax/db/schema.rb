@@ -11,43 +11,77 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120612175840) do
+ActiveRecord::Schema.define(:version => 20120618185711) do
 
   create_table "doctors", :force => true do |t|
-    t.string   "name",       :null => false
+    t.string   "name"
     t.string   "phone"
-    t.string   "email",      :null => false
+    t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "dosages", :force => true do |t|
+    t.string   "unit"
+    t.decimal  "amount"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   create_table "drugs", :force => true do |t|
-    t.string   "name",          :null => false
-    t.string   "treatmentname", :null => false
-    t.date     "startdate"
-    t.date     "enddate"
-    t.integer  "dosage"
-    t.integer  "frequecy"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.string   "name"
+    t.string   "treatmentname"
+    t.integer  "days_worth_of_medication"
+    t.date     "refill_date"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "frequencies", :force => true do |t|
+    t.integer  "times_per_day"
+    t.integer  "days_per_week"
+    t.integer  "weeks_per_month"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "patients", :force => true do |t|
-    t.string   "firstname",           :null => false
-    t.string   "lastname",            :null => false
+    t.string   "firstname"
+    t.string   "lastname"
     t.string   "phone"
     t.string   "email"
+    t.string   "password_hash"
+    t.string   "password_salt"
     t.string   "relation_to_sponsor"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
 
+  create_table "preferred_times", :force => true do |t|
+    t.time     "time_to_receive_reminder"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.boolean  "send_by_text"
+    t.boolean  "send_by_email"
+    t.boolean  "reminder_summary"
+    t.boolean  "reminder_preferred_times"
+    t.boolean  "is_active"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "sponsors", :force => true do |t|
-    t.string   "firstname",  :null => false
-    t.string   "lastname",   :null => false
-    t.string   "email",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "firstname"
+    t.string   "lastname"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "password_hash"
+    t.string   "password_salt"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end

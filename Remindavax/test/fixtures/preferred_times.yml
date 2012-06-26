@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  time_to_receive_reminder: 2012-06-18 14:54:42
+
+two:
+  time_to_receive_reminder: 2012-06-18 14:54:42

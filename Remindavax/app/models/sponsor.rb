@@ -1,4 +1,7 @@
 class Sponsor < ActiveRecord::Base
-  # attr_accessible :title, :body
   has_many :patients
+  attr_accessible :firstname, :lastname, :email, :phone, :password, :passwordconfirmation
+
+  validates :firstname, :lastname, :phone, :presence => true
+  validates :email, :presence => true, :uniqueness => true
 end

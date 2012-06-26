@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  send_by_text: false
+  send_by_email: false
+  reminder_summary: false
+  reminder_preferred_times: false
+  is_active: false
+
+two:
+  send_by_text: false
+  send_by_email: false
+  reminder_summary: false
+  reminder_preferred_times: false
+  is_active: false

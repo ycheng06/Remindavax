@@ -1,12 +1,10 @@
 class CreateDrugs < ActiveRecord::Migration
   def change
     create_table :drugs do |t|
-			t.string :name, :null => false
-			t.string :treatmentname, :null => false
-			t.date :startdate
-			t.date :enddate
-			t.integer :dosage
-			t.integer :frequecy
+			t.string :name
+			t.string :treatmentname
+      t.integer :days_worth_of_medication
+      t.date :refill_date
       t.timestamps
     end
   end

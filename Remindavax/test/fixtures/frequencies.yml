@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  times_per_day: 1
+  days_per_week: 1
+  weeks_per_month: 1
+
+two:
+  times_per_day: 1
+  days_per_week: 1
+  weeks_per_month: 1

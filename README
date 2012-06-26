@@ -1,1 +1,13 @@
-Vision statement: Remindavax is driven to become the most effective solution to treatment non-adherence in the U.S. and abroad. We are committed to providing accessible, cutting edge mobile adherence reminder services to individuals and public and private healthcare institutions. 
+VISION STATEMENT
+=================
+Remindavax is driven to become the most effective solution to treatment
+non-adherence in the U.S. and abroad. We are committed to providing accessible, cutting 
+edge mobile adherence reminder services to individuals and public and private healthcare 
+institutions. 
+
+INSTALLATION GUIDE
+==================
+Rails 3.2.3
+Ruby 1.9.3
+
+

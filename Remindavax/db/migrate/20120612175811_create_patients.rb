@@ -1,10 +1,12 @@
 class CreatePatients < ActiveRecord::Migration
   def change
     create_table :patients do |t|
-      t.string :firstname, :null => false
-      t.string :lastname, :null => false
+      t.string :firstname
+      t.string :lastname
       t.string :phone
       t.string :email
+      t.string :password_hash
+      t.string :password_salt
       t.string :relation_to_sponsor
       t.timestamps
     end

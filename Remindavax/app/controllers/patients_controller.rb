@@ -1,12 +1,15 @@
+class PatientsController < ApplicationController
 def new 
-	@user = User.new
+	@patient = Patient.new
 end
 
 def create 
-	@user = User.new(params[:user])
-	if @user.save 
+	@patient = Patient.new(params[:patient])
+	if @patient.save 
 		redirect_to root_url, :notice => "You have been registered"
 	else
 		render "new"
 	end
+end
+
 end

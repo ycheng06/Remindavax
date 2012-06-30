@@ -2,6 +2,14 @@ Remindavax::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+	root :to => "sessions#new"
+	match "log_out" => "sessions#destroy", :as => "log_out"
+	match "log_in" => "sessions#new", :as => "log_in"
+	match "sign_up" => "patients#new", :as => "sign_up"
+	
+	resources :patients
+	resources :sessions
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

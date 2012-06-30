@@ -3,17 +3,20 @@ class Patient < ActiveRecord::Base
   has_one :setting
   belongs_to :doctor 
   belongs_to :sponsor
-  attr_accessible :firstname , :lastname, :phone, :relation_to_sponsor, 
-  					:email, :password, :passwordconfirmation
+  
+  attr_accessible :email, :password, :password_confirmation
+  attr_accessor :password
+  before_save :encrypt_password
   
   validates :firstname, :lastname, :phone, :presence => true
   validates :email, :presence => true, :uniqueness => true
   validates :password, :presence => true, :confirmation => true, 
   			:on => :create
   			
-  def authenticate(email, password)
-  	user = find_by_email(email)
-  	if user && user.password_hash == BCrypt::Engine.hash_secret(password, password_salt)
+  def self.authenticate(email, password)
+  	patient = find_by_email(email)
+  	if patient && patient.password_hash == BCrypt::Engine.hash_secret(password, password_salt)
+  		patient
   	else
   		nil 
   	end

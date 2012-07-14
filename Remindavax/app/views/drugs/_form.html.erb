@@ -15,8 +15,16 @@
 		<%= f.text_field :name %>
 	</p>
 	<p>
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
+		<%= f.label :treatmentname %><br />
+		<%= f.text_field :treatmentname %>
+	</p>
+	<p>
+		<%= f.label(:days_worth_of_medication, "days worth of medication") %>
+		<%= f.text_field :days_worth_of_medication %>
+	</p>
+	<p>
+		<%= f.label(:refill_date, "refill date")%>
+		<%= f.date_select :refill_date %>
 	</p>
 
   <div class="actions">

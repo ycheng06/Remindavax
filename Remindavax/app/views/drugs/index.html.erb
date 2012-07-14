@@ -2,13 +2,18 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Drug name</th>
+    <th>Treatment name</th>
+    <th>Days worth of Medication</th>
+    <th>Refill Date</th>
   </tr>
 
 <% @drugs.each do |drug| %>
   <tr>
+  	<td><%= drug.name %></td>
+  	<td><%= drug.treatmentname %></td>
+  	<td><%= drug.days_worth_of_medication %></td>
+  	<td><%= drug.refill_date %></td>
     <td><%= link_to 'Show', drug %></td>
     <td><%= link_to 'Edit', edit_drug_path(drug) %></td>
     <td><%= link_to 'Destroy', drug, confirm: 'Are you sure?', method: :delete %></td>

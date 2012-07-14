@@ -1,6 +1,7 @@
 class Patient < ActiveRecord::Base
   has_many :drugs
   has_one :setting
+  has_many :preferred_times, :through => :setting
   belongs_to :doctor 
   belongs_to :sponsor
   

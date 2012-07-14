@@ -1,5 +1,29 @@
 <p id="notice"><%= notice %></p>
+ 
+<p>
+  <b>Name:</b>
+  <%= @drug.name %>
+</p>
+ 
+<p>
+  <b>Treatment Name:</b>
+  <%= @drug.treatmentname %>
+</p>
+ 
+<p>
+  <b>Days worth of Medication:</b>
+  <%= @drug.days_worth_of_medication %>
+</p>
 
+<p>
+	<b>Refill Date:</b>
+	<%= @drug.refill_date %>
+</p>
+
+<p>
+	<b>Last Updated:</b>
+	<%= @drug.updated_at %>
+</p>
 
 <%= link_to 'Edit', edit_drug_path(@drug) %> |
 <%= link_to 'Back', drugs_path %>

@@ -24,6 +24,19 @@
 		<%= f.label :password_confirmation %><br />
 		<%= f.password_field :password_confirmation %> 
 	</p>
-	<p class="button"><%= f.submit %></p>
+	<p>
+		<%= f.label :firstname %><br />
+		<%= f.text_field :firstname %>
+	</p>
+	<p>
+		<%= f.label :lastname %><br />
+		<%= f.text_field :lastname %>
+	</p>
+	<p>
+		<%= f.label :phone %><br />
+		<%= f.text_field :phone %>
+	</p>
+		
+	<%= submit_tag "register", :class => "button"%>
 	
 <% end %>

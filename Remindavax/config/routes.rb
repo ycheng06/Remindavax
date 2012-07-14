@@ -9,6 +9,7 @@ Remindavax::Application.routes.draw do
 	
 	resources :patients
 	resources :sessions
+	resources :drugs
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

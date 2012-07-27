@@ -12,6 +12,7 @@
 		Logged in as <%= current_patient.email %>.
 		<%= link_to "Log out", log_out_path %><br />
 		<%= link_to "Regimen", drugs_path %>
+		<%= link_to "Settings", settings_path %>
 	<% else %>
 		<%= link_to "Log in", log_in_path %> or
 		<%= link_to "Sign up", sign_up_path %>

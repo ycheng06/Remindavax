@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618185711) do
+ActiveRecord::Schema.define(:version => 20120727052010) do
 
   create_table "doctors", :force => true do |t|
     t.string   "name"
@@ -71,7 +71,10 @@ ActiveRecord::Schema.define(:version => 20120618185711) do
     t.boolean  "is_active"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.integer  "patient_id"
   end
+
+  add_index "settings", ["patient_id"], :name => "index_settings_on_patient_id"
 
   create_table "sponsors", :force => true do |t|
     t.string   "firstname"

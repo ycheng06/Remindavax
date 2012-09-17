@@ -6,8 +6,10 @@ Remindavax::Application.routes.draw do
 	match "log_out" => "sessions#destroy", :as => "log_out"
 	match "log_in" => "sessions#new", :as => "log_in"
 	match "sign_up" => "patients#new", :as => "sign_up"
+	match "settings" => "settings#edit", :as => "settings"
 	
 	resources :patients
+	resources :settings
 	resources :sessions
 	resources :drugs
 

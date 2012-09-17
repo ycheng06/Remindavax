@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 # Ignore bundler config
 /.bundle
@@ -8,3 +9,85 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+=======
+# MAC OSX
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Vim
+.*.sw[a-z]
+*.un~
+Session.vim
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# Linux
+.*
+!.gitignore
+*~
+
+# KDE
+.directory
+
+# Rails
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+
+#Ruby
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+>>>>>>> 560350a7dbd33b65e674594d3762226251fca89e
+
+.DS_Store
+
+.DS_Store
+
+Remindavax/.DS_Store

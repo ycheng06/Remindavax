@@ -1,0 +1,38 @@
+<h1> Settings </h1>
+
+<%= form_for @setting do |s| %>
+	<% if @setting.errors.any? %>
+	<div class="error_messages">
+		<h2>Form is invalid</h2>
+		<ul>
+			<% for message in @setting.errors.full_messages %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+	<% end %>
+	
+	<p>
+		<%= s.label :send_by_text %><br />
+		<%= s.check_box :send_by_text %>
+	</p>
+	<p>
+		<%= s.label :send_by_email %><br />
+		<%= s.check_box :send_by_email %>
+	</p>
+	<p>
+		<%= s.label :reminder_summary %><br />
+		<%= s.check_box :reminder_summary %>
+	</p>
+	<p>
+		<%= s.label :reminder_preferred_times %><br />
+		<%= s.check_box :reminder_preferred_times %>
+	</p>
+	<p>
+		<%= s.label :is_active %><br />
+		<%= s.check_box :is_active %>
+	</p>
+		
+	<%= submit_tag "Save Changes", :class => "button"%>
+	
+<% end %>

@@ -2,9 +2,9 @@ class Drug < ActiveRecord::Base
   belongs_to :patient
   has_one :dosage
   has_one :frequency
-	
+  accepts_nested_attributes_for :dosage, :frequency
 	attr_accessible :name, :treatmentname, :days_worth_of_medication,
-		:refill_date
+		:refill_date, :dosage_attributes
 	
 	validates :name, :treatmentname, :refill_date, :presence => true
 	validates :days_worth_of_medication, :numericality => {:only_integer => true}

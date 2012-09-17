@@ -5,6 +5,7 @@ class CreateDrugs < ActiveRecord::Migration
 			t.string :treatmentname
       t.integer :days_worth_of_medication
       t.date :refill_date
+      t.integer :patient_id
       t.timestamps
     end
   end

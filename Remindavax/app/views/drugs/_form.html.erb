@@ -1,4 +1,4 @@
-<%= form_for(@drug) do |f| %>
+<%= form_for(setup_drug(@drug)) do |f| %>
   <% if @drug.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@drug.errors.count, "error") %> prohibited this drug from being saved:</h2>
@@ -19,13 +19,24 @@
 		<%= f.text_field :treatmentname %>
 	</p>
 	<p>
-		<%= f.label(:days_worth_of_medication, "days worth of medication") %>
+		<%= f.label(:days_worth_of_medication, "Days worth of medication") %><br />
 		<%= f.text_field :days_worth_of_medication %>
 	</p>
 	<p>
-		<%= f.label(:refill_date, "refill date")%>
+		<%= f.label(:refill_date, "Refill date")%><br />
 		<%= f.date_select :refill_date %>
 	</p>
+
+  <%= f.fields_for :dosage do |f|%>
+    <p>
+      <%= f.label :amount %><br />
+      <%= f.text_field :amount %>
+    </p>
+    <p>
+      <%= f.label :unit %><br />
+      <%= f.text_field :unit %>
+    </p>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

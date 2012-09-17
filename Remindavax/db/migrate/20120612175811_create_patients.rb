@@ -8,6 +8,8 @@ class CreatePatients < ActiveRecord::Migration
       t.string :password_hash
       t.string :password_salt
       t.string :relation_to_sponsor
+      t.integer :doctor_id
+      t.integer :sponsor_id
       t.timestamps
     end
   end

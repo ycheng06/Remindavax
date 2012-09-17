@@ -6,7 +6,7 @@ class CreateSettings < ActiveRecord::Migration
       t.boolean :reminder_summary
       t.boolean :reminder_preferred_times
       t.boolean :is_active
-
+      t.integer :patient_id
       t.timestamps
     end
   end

@@ -2,7 +2,7 @@ class DrugsController < ApplicationController
   # GET /drugs
   # GET /drugs.json
   def index
-    @drugs = Drug.all
+    @drugs = current_patient.drugs.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,7 +28,6 @@ class DrugsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @drug }
     end
   end
 
@@ -41,6 +40,7 @@ class DrugsController < ApplicationController
   # POST /drugs.json
   def create
     @drug = Drug.new(params[:drug])
+    @drug.patient_id = current_patient.id
 
     respond_to do |format|
       if @drug.save

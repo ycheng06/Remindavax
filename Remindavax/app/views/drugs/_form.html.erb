@@ -27,17 +27,31 @@
 		<%= f.date_select :refill_date %>
 	</p>
 
-  <%= f.fields_for :dosage do |f|%>
+  <%= f.fields_for :dosage do |d|%>
     <p>
-      <%= f.label :amount %><br />
-      <%= f.text_field :amount %>
+      <%= d.label :amount %><br />
+      <%= d.text_field :amount %>
     </p>
     <p>
-      <%= f.label :unit %><br />
-      <%= f.text_field :unit %>
+      <%= d.label :unit %><br />
+      <%= d.text_field :unit %>
     </p>
   <% end %>
 
+  <%= f.fields_for :frequency do |fr| %>
+    <p>
+      <%= fr.label(:times_per_day, "Times per Day")%><br />
+      <%= fr.number_field :times_per_day, :min => 1 %>
+    </p>
+    <p>
+      <%= fr.label(:days_per_week, "Days per Week")%><br />
+      <%= fr.number_field :days_per_week, :min => 1 %>
+    </p>
+    <p>
+      <%= fr.label(:weeks_per_month, "Weeks per Month")%><br />
+      <%= fr.number_field :weeks_per_month, :min => 1 %>
+    </p>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

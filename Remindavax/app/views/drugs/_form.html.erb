@@ -12,7 +12,7 @@
   <% end %>
 	<p>
 		<%= f.label :name %><br />
-		<%= f.text_field :name %>
+		<%= f.collection_select :name, Drug::DRUGS, :to_s, :to_s, :prompt => 'Select' %>
 	</p>
 	<p>
 		<%= f.label :treatmentname %><br />
@@ -20,7 +20,7 @@
 	</p>
 	<p>
 		<%= f.label(:days_worth_of_medication, "Days worth of medication") %><br />
-		<%= f.text_field :days_worth_of_medication %>
+		<%= f.number_field :days_worth_of_medication, :min => 1%>
 	</p>
 	<p>
 		<%= f.label(:refill_date, "Refill date")%><br />
@@ -41,18 +41,18 @@
   <%= f.fields_for :frequency do |fr| %>
     <p>
       <%= fr.label(:times_per_day, "Times per Day")%><br />
-      <%= fr.number_field :times_per_day, :min => 1 %>
+      <%= fr.number_field :times_per_day, :min => 1%>
     </p>
     <p>
       <%= fr.label(:days_per_week, "Days per Week")%><br />
-      <%= fr.number_field :days_per_week, :min => 1 %>
+      <%= fr.number_field :days_per_week, :min => 1%>
     </p>
     <p>
       <%= fr.label(:weeks_per_month, "Weeks per Month")%><br />
-      <%= fr.number_field :weeks_per_month, :min => 1 %>
+      <%= fr.number_field :weeks_per_month, :min => 1%>
     </p>
   <% end %>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Medication" %>
   </div>
 <% end %>

@@ -4,4 +4,6 @@ class Dosage < ActiveRecord::Base
 
   validates :amount, :unit, :presence => true
   validates :amount, :numericality => true
+  
+
 end

@@ -13,7 +13,7 @@ class DrugsController < ApplicationController
   # GET /drugs/1
   # GET /drugs/1.json
   def show
-    @drug = Drug.find(params[:id])
+    @drug = Drug.includes(:dosage, :frequency).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

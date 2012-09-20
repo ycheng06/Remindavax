@@ -20,9 +20,28 @@
 	<%= @drug.refill_date %>
 </p>
 <p>
+	<b>Amount</b>
+	<%= @drug.dosage.amount %>
+</p>
+<p>
+  <b>Unit</b>
+  <%= @drug.dosage.unit %>
+</p>
+<p>
+  <b>Times per Day:</b>
+  <%= @drug.frequency.times_per_day %>
+</p>
+<p>
+  <b>Days per Week:</b>
+  <%= @drug.frequency.days_per_week %>
+</p>
+<p>
+  <b>Weeks per Month:</b>
+  <%= @drug.frequency.weeks_per_month %>
+</p>
+<p>
 	<b>Last Updated:</b>
 	<%= @drug.updated_at %>
 </p>
-
 <%= link_to 'Edit', edit_drug_path(@drug) %> |
 <%= link_to 'Back', drugs_path %>
